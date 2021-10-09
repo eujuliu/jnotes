@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { increment } from "./features/note/noteDateSlice";
+import { increment, decrement } from "./features/note/noteDateSlice";
 
 import PlusIcon from "./images/plus-icon.svg";
 import MoonIcon from "./images/moon-icon.svg";
@@ -24,11 +24,7 @@ function App() {
             <button onClick={() => dispatch(increment())}>
               <img src={PlusIcon} alt="Add new note" />
             </button>
-            <button
-              onClick={() => {
-                console.log("Dark Mode");
-              }}
-            >
+            <button onClick={() => {}}>
               <img src={MoonIcon} alt="DarkMode button" />
             </button>
           </div>
@@ -43,7 +39,13 @@ function App() {
                 <img src={EditIcon} alt="Edit this note" />
               </button>
 
-              <button onClick={() => console.log("Remove!")}>
+              <button
+                onClick={() => {
+                  let response = Number(prompt("Which array?"));
+
+                  dispatch(decrement(response));
+                }}
+              >
                 <img src={TrashIcon} alt="Remove this note" />
               </button>
             </div>

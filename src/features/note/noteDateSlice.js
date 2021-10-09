@@ -14,6 +14,12 @@ export const noteDateSlice = createSlice({
       state.dates.push(dateFormat(new Date(), "mmm dd, yyyy hh:MM TT"));
       localStorage.setItem("@jnotes-notes", JSON.stringify(state.dates));
     },
+    decrement: (state, actions) => {
+      const arrayPosition = actions.payload;
+
+      state.dates.splice(arrayPosition, 1);
+      localStorage.setItem("@jnotes-notes", JSON.stringify(state.dates));
+    },
   },
 });
 

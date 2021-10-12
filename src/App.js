@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
-import { increment, decrement } from "./features/note/noteDateSlice";
+import { incrementDates, decrementDates } from "./features/note/noteDateSlice";
+import { incrementNotes, decrementNotes } from "./features/note/noteSlice";
 
 import PlusIcon from "./images/plus-icon.svg";
 import MoonIcon from "./images/moon-icon.svg";
@@ -10,18 +11,25 @@ import "./styles/global.css";
 import "./styles/pages/App.scss";
 
 function App() {
-  const noteDateCount = useSelector((state) => state.noteDate.dates);
+  const notesCount = useSelector((state) => state.notes.allNotes);
+  const datesCount = useSelector((state) => state.noteDate.dates);
+
+  console.log(notesCount);
+  console.log(datesCount);
 
   const dispatch = useDispatch();
-
-  console.log(noteDateCount);
   return (
     <div className="container">
       <header>
         <div className="header-content">
           <h1>jnotes</h1>
           <div className="page-options">
-            <button onClick={() => dispatch(increment())}>
+            <button
+              onClick={() => {
+                dispatch(incrementNotes());
+                dispatch(incrementDates());
+              }}
+            >
               <img src={PlusIcon} alt="Add new note" />
             </button>
             <button onClick={() => {}}>
@@ -43,7 +51,7 @@ function App() {
                 onClick={() => {
                   let response = Number(prompt("Which array?"));
 
-                  dispatch(decrement(response));
+                  dispatch(decrementDates(response));
                 }}
               >
                 <img src={TrashIcon} alt="Remove this note" />

@@ -10,11 +10,11 @@ export const noteDateSlice = createSlice({
         : JSON.parse(localStorage.getItem("@jnotes-notes")),
   },
   reducers: {
-    increment: (state) => {
+    incrementDates: (state) => {
       state.dates.push(dateFormat(new Date(), "mmm dd, yyyy hh:MM TT"));
       localStorage.setItem("@jnotes-notes", JSON.stringify(state.dates));
     },
-    decrement: (state, actions) => {
+    decrementDates: (state, actions) => {
       const arrayPosition = actions.payload;
 
       state.dates.splice(arrayPosition, 1);
@@ -23,5 +23,5 @@ export const noteDateSlice = createSlice({
   },
 });
 
-export const { increment, decrement } = noteDateSlice.actions;
+export const { incrementDates, decrementDates } = noteDateSlice.actions;
 export default noteDateSlice.reducer;

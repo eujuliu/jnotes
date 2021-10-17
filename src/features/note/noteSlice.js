@@ -4,8 +4,8 @@ function addNotesToArray() {
   let localStorageNotes = [];
   for (let i = 0; i < localStorage.length; i++) {
     if (localStorage.key(`@jnotes-note/${i}`)) {
-      localStorageNotes.push(
-        JSON.parse(localStorage.getItem(`@jnotes-note/${i}`))
+      toString(
+        localStorageNotes.push(localStorage.getItem(`@jnotes-note/${i}`))
       );
     }
   }
@@ -25,13 +25,12 @@ export const noteSlice = createSlice({
   reducers: {
     incrementNotes: (state) => {
       state.allNotes.push(
-        `You may use Markdown to write something in this note.
-        If you don't know what is (Markdown)[https://www.markdownguide.org/basic-syntax/]`
+        "You may use Markdown to write something in this note.\n\nIf you don't know what is <a href='https://www.markdownguide.org/basic-syntax/' target='_blank'>Markdown basic syntax</a>"
       );
 
       localStorage.setItem(
         `@jnotes-note/${state.allNotes.length - 1}`,
-        JSON.stringify(state.allNotes[state.allNotes.length - 1])
+        state.allNotes[state.allNotes.length - 1]
       );
     },
     decrementNotes: (state, actions) => {
@@ -42,7 +41,7 @@ export const noteSlice = createSlice({
       localStorage.clear();
 
       state.allNotes.forEach((value, index) => {
-        localStorage.setItem(`@jnotes-note/${index}`, JSON.stringify(value));
+        localStorage.setItem(`@jnotes-note/${index}`, value);
       });
     },
   },

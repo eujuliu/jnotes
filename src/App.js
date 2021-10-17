@@ -11,13 +11,13 @@ import "./styles/global.css";
 import "./styles/pages/App.scss";
 
 function App() {
+  const dispatch = useDispatch();
   const notesCount = useSelector((state) => state.notes.allNotes);
   const datesCount = useSelector((state) => state.noteDate.dates);
 
   console.log(notesCount);
   console.log(datesCount);
 
-  const dispatch = useDispatch();
   return (
     <div className="container">
       <header>
@@ -26,8 +26,8 @@ function App() {
           <div className="page-options">
             <button
               onClick={() => {
-                dispatch(incrementNotes());
                 dispatch(incrementDates());
+                dispatch(incrementNotes());
               }}
             >
               <img src={PlusIcon} alt="Add new note" />
@@ -51,6 +51,7 @@ function App() {
                 onClick={() => {
                   let response = Number(prompt("Which array?"));
 
+                  dispatch(decrementNotes(response));
                   dispatch(decrementDates(response));
                 }}
               >

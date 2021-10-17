@@ -34,6 +34,17 @@ export const noteSlice = createSlice({
         JSON.stringify(state.allNotes[state.allNotes.length - 1])
       );
     },
+    decrementNotes: (state, actions) => {
+      const arrayPosition = actions.payload;
+
+      state.allNotes.splice(arrayPosition, 1);
+
+      localStorage.clear();
+
+      state.allNotes.forEach((value, index) => {
+        localStorage.setItem(`@jnotes-note/${index}`, JSON.stringify(value));
+      });
+    },
   },
 });
 

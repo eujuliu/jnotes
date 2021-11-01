@@ -1,9 +1,9 @@
 import { useSelector, useDispatch } from "react-redux";
 
-import Note from "./components/note";
+import { Note } from "./components/Note";
 
 import { incrementDates } from "./features/note/noteDateSlice";
-import { incrementNotes } from "./features/note/noteSlice";
+import { incrementNotes } from "./features/note/noteContentSlice";
 
 import PlusIcon from "./images/plus-icon.svg";
 import MoonIcon from "./images/moon-icon.svg";
@@ -13,7 +13,7 @@ import "./styles/pages/App.scss";
 
 function App() {
   const dispatch = useDispatch();
-  const notes = useSelector((state) => state.notes.allNotes);
+  const notes = useSelector((state) => state.noteContent.notes);
   const dates = useSelector((state) => state.noteDate.dates);
 
   return (

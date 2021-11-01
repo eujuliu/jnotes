@@ -19,7 +19,7 @@
 
     .note-date {
       font-weight: 600;
-      color: rgba(48, 48, 48, 0.73);
+      color: rgba(48, 48, 48, 0.729);
     }
 
     .note-options button {
@@ -27,16 +27,40 @@
     }
   }
 
-  .note-content {
+  .note-content-textarea {
+    resize: vertical;
+    width: 100%;
+    border-radius: 10px;
+    padding: 0.6rem;
+  }
+
+  .note-content-div {
     width: 100%;
 
-    img {
-      width: 100%;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      border-bottom: 1px solid #ececec;
     }
 
     ul,
     ol {
       padding-left: 1.2rem;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid gray;
+      border-collapse: collapse;
+      padding: 0.35rem;
     }
   }
 }

@@ -42,8 +42,17 @@ export const noteContentSlice = createSlice({
         localStorage.setItem(`@jnotes-note/${index}`, value);
       });
     },
+    changeNoteContent: (state, actions) => {
+      let { id, content } = actions.payload;
+
+      if (content === "") return;
+
+      state.notes[id] = content;
+      localStorage.setItem(`@jnotes-note/${id}`, content);
+    },
   },
 });
 
-export const { incrementNotes, decrementNotes } = noteContentSlice.actions;
+export const { incrementNotes, decrementNotes, changeNoteContent } =
+  noteContentSlice.actions;
 export default noteContentSlice.reducer;

@@ -8,16 +8,21 @@ import rehypeSanitize from "rehype-sanitize";
 import rehypeHighlight from "rehype-highlight";
 
 import { decrementDates } from "../../features/note/noteDateSlice";
-import { decrementNotes } from "../../features/note/noteContentSlice";
+import {
+  decrementNotes,
+  changeNoteContent,
+} from "../../features/note/noteContentSlice";
 
 import EditIcon from "../../images/edit-icon.svg";
 import TrashIcon from "../../images/trash-icon.svg";
+import SaveIcon from "../../images/save-icon.svg";
 
 import "./styles.scss";
 import "./highlight-dracula.css";
 
 export function Note({ id, date, content }) {
   let [editMode, setEditMode] = useState(false);
+  let textareaValue = "";
   const dispatch = useDispatch();
 
   function returnDivOrTextarea() {
@@ -32,8 +37,33 @@ export function Note({ id, date, content }) {
       <textarea
         className="note-content-textarea"
         defaultValue={content}
-        style={{ height: content.length - 60 }}
+        onChange={(event) => {
+          textareaValue = event.currentTarget.value;
+        }}
+        style={{ height: content.length / 4 }}
       ></textarea>
+    );
+  }
+
+  function changeEditModeButton() {
+    return editMode === false ? (
+      <button
+        onClick={() => {
+          setEditMode((editMode = !editMode));
+          returnDivOrTextarea();
+        }}
+      >
+        <img src={EditIcon} alt="Edit this note" />
+      </button>
+    ) : (
+      <button
+        onClick={() => {
+          dispatch(changeNoteContent({ id, content: textareaValue }));
+          setEditMode((editMode = !editMode));
+        }}
+      >
+        <img src={SaveIcon} alt="Save changes" />
+      </button>
     );
   }
 
@@ -42,15 +72,7 @@ export function Note({ id, date, content }) {
       <div className="note-header">
         <span className="note-date">{date}</span>
         <div className="note-options">
-          <button
-            onClick={() => {
-              setEditMode((editMode = !editMode));
-              returnDivOrTextarea();
-            }}
-          >
-            <img src={EditIcon} alt="Edit this note" />
-          </button>
-
+          {changeEditModeButton()}
           <button
             onClick={() => {
               dispatch(decrementNotes(id));

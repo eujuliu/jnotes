@@ -58,6 +58,11 @@ export function Note({ id, date, content }) {
     ) : (
       <button
         onClick={() => {
+          if (
+            window.confirm("Are you sure you want to change this note?") ===
+            false
+          )
+            return;
           dispatch(changeNoteContent({ id, content: textareaValue }));
           setEditMode((editMode = !editMode));
         }}
@@ -75,6 +80,17 @@ export function Note({ id, date, content }) {
           {changeEditModeButton()}
           <button
             onClick={() => {
+              if (editMode === true) {
+                window.alert("Shutdown edit mode to remove this note.");
+                return;
+              }
+
+              if (
+                window.confirm("Are you sure you want to delete this note?") ===
+                false
+              )
+                return;
+
               dispatch(decrementNotes(id));
               dispatch(decrementDates(id));
             }}

@@ -1,15 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
+import store from "store";
 
 function initialValue() {
   let localStorageNotes = [];
-  for (let i = 0; i < localStorage.length; i++) {
-    if (localStorage.key(`@jnotes-note/${i}`)) {
-      localStorageNotes.push(localStorage.getItem(`@jnotes-note/${i}`));
+  store.each((value, key) => {
+    if (key.includes("@jnotes-note/") && value !== null) {
+      localStorageNotes.push(value);
     }
-  }
-
-  localStorageNotes.forEach((value, index, array) => {
-    if (value === null) array.splice(index, 1);
   });
 
   return localStorageNotes;
@@ -23,10 +20,10 @@ export const noteContentSlice = createSlice({
   reducers: {
     incrementNotes: (state) => {
       state.notes.push(
-        "You may use Markdown to write something in this note.\n\nIf you don't know what is <a href='https://www.markdownguide.org/basic-syntax/' target='_blank'>Markdown basic syntax</a>"
+        "You may use Markdown to write something in this note.\n\nIf you don't know what is <a href='https://www.markdownguide.org/basic-syntax/' rel='noreferrer' target='_blank'>Markdown basic syntax</a>"
       );
 
-      localStorage.setItem(
+      store.set(
         `@jnotes-note/${state.notes.length - 1}`,
         state.notes[state.notes.length - 1]
       );
@@ -36,10 +33,10 @@ export const noteContentSlice = createSlice({
 
       state.notes.splice(arrayPosition, 1);
 
-      localStorage.clear();
+      store.clearAll();
 
       state.notes.forEach((value, index) => {
-        localStorage.setItem(`@jnotes-note/${index}`, value);
+        store.set(`@jnotes-note/${index}`, value);
       });
     },
     changeNoteContent: (state, actions) => {
@@ -48,7 +45,7 @@ export const noteContentSlice = createSlice({
       if (content === "") return;
 
       state.notes[id] = content;
-      localStorage.setItem(`@jnotes-note/${id}`, content);
+      store.set(`@jnotes-note/${id}`, content);
     },
   },
 });

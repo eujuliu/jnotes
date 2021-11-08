@@ -20,6 +20,7 @@
     "remark-gfm": "^3.0.0",
     "remark-toc": "^8.0.1",
     "sass": "^1.42.1",
+    "store": "^2.0.12",
     "web-vitals": "^1.0.1"
   },
   "scripts": {

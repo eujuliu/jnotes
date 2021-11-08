@@ -13,14 +13,19 @@ import {
   changeNoteContent,
 } from "../../features/note/noteContentSlice";
 
-import EditIcon from "../../images/edit-icon.svg";
-import TrashIcon from "../../images/trash-icon.svg";
-import SaveIcon from "../../images/save-icon.svg";
+import EditIconBlack from "../../images/edit-icon-black.svg";
+import EditIconWhite from "../../images/edit-icon-white.svg";
+
+import TrashIconBlack from "../../images/trash-icon-black.svg";
+import TrashIconWhite from "../../images/trash-icon-white.svg";
+
+import SaveIconBlack from "../../images/save-icon-black.svg";
+import SaveIconWhite from "../../images/save-icon-white.svg";
 
 import "./styles.scss";
 import "./highlight-dracula.css";
 
-export function Note({ id, date, content }) {
+export function Note({ id, date, content, darkMode }) {
   let [editMode, setEditMode] = useState(false);
   let textareaValue = "";
   const dispatch = useDispatch();
@@ -53,7 +58,11 @@ export function Note({ id, date, content }) {
           returnDivOrTextarea();
         }}
       >
-        <img src={EditIcon} alt="Edit this note" />
+        {darkMode ? (
+          <img src={EditIconWhite} alt="Edit this note" />
+        ) : (
+          <img src={EditIconBlack} alt="Edit this note" />
+        )}
       </button>
     ) : (
       <button
@@ -67,7 +76,11 @@ export function Note({ id, date, content }) {
           setEditMode((editMode = !editMode));
         }}
       >
-        <img src={SaveIcon} alt="Save changes" />
+        {darkMode ? (
+          <img src={SaveIconWhite} alt="Save changes" />
+        ) : (
+          <img src={SaveIconBlack} alt="Save changes" />
+        )}
       </button>
     );
   }
@@ -95,7 +108,11 @@ export function Note({ id, date, content }) {
               dispatch(decrementDates(id));
             }}
           >
-            <img src={TrashIcon} alt="Remove this note" />
+            {darkMode ? (
+              <img src={TrashIconWhite} alt="Remove this note" />
+            ) : (
+              <img src={TrashIconBlack} alt="Remove this note" />
+            )}
           </button>
         </div>
       </div>
@@ -103,20 +120,3 @@ export function Note({ id, date, content }) {
     </section>
   );
 }
-
-/* 
-
-<ReactMarkdown
-  className="note-content-div"
-  children={content}
-  remarkPlugins={[remarkGfm, remarkToc]}
-  rehypePlugins={[rehypeRaw, rehypeSanitize, rehypeHighlight]}
-/> 
-
-<textarea
-  className="note-content-textarea"
-  defaultValue={content}
-  style={{ height: content.length - 60 }}
-></textarea>
-
-*/

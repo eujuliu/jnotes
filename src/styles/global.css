@@ -23,6 +23,11 @@ textarea {
   font: 400 1rem "Poppins", sans-serif;
 }
 
+a {
+  color: #04338b;
+  font-weight: 500;
+}
+
 button {
   cursor: pointer;
   background: none;

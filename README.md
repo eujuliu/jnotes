@@ -35,9 +35,9 @@ The follows tools were used on project build:
 ---
 
 <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/49854105?v=4" width="100px;" alt=""/>
- <br />
- <sub><b>Julio Martins</b></sub></a>
+<br />
+<sub><b>Julio Martins</b></sub></a>
 
-Make by Julio Martins 👋🏽 Contact!
+Make by Julio Martins 👋🏽 Contact me!
 
 [![Twitter Badge](https://img.shields.io/badge/-@jjuliomarttins-1ca0f1?style=for-the-badge&labelColor=1ca0f1&logo=twitter&logoColor=white&link=https://twitter.com/jjuliomarttins)](https://twitter.com/jjuliomarttins) [![Linkedin Badge](https://img.shields.io/badge/-@jjuliomarttins-1262BF?style=for-the-badge&labelColor=1262BF&logo=linkedin&logoColor=white&link=https://twitter.com/jjuliomarttins)](https://www.linkedin.com/in/jjuliomarttins/)

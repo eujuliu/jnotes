@@ -46,8 +46,8 @@ The follows tools were used on project build:
 ---
 
 <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/49854105?v=4" width="100px;" alt=""/>
- <br />
- <sub><b>Julio Martins</b></sub></a>
+<br />
+<sub><b>Julio Martins</b></sub></a>
 
 Make by Julio Martins 👋🏽 Contact me!
 

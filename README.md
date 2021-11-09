@@ -29,6 +29,7 @@ The follows tools were used on project build:
 - [React Redux](https://react-redux.js.org/)
 - [SASS](https://sass-lang.com/)
 - [React Markdown](https://github.com/remarkjs/react-markdown)
+- [store](https://github.com/marcuswestin/store.js)
 
 ## Autor
 

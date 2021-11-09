@@ -11,6 +11,16 @@
 
 Picked up an idea from [here](https://github.com/florinpop17/app-ideas).
 
+---
+
+## Preview
+
+<p align="center">
+  <img src="./.github/jnotes-preview.gif" alt="Logo" />
+</p>
+
+If do you want interact with the project [click here](https://jnotes.vercel.app/)
+
 ## Features
 
 - [x] User can create a note

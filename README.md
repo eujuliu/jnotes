@@ -39,6 +39,7 @@ The follows tools were used on project build:
 - [React Redux](https://react-redux.js.org/)
 - [SASS](https://sass-lang.com/)
 - [React Markdown](https://github.com/remarkjs/react-markdown)
+- [store](https://github.com/marcuswestin/store.js)
 
 ## Autor
 
@@ -48,6 +49,6 @@ The follows tools were used on project build:
  <br />
  <sub><b>Julio Martins</b></sub></a>
 
-Make by Julio Martins 👋🏽 Contact!
+Make by Julio Martins 👋🏽 Contact me!
 
 [![Twitter Badge](https://img.shields.io/badge/-@jjuliomarttins-1ca0f1?style=for-the-badge&labelColor=1ca0f1&logo=twitter&logoColor=white&link=https://twitter.com/jjuliomarttins)](https://twitter.com/jjuliomarttins) [![Linkedin Badge](https://img.shields.io/badge/-@jjuliomarttins-1262BF?style=for-the-badge&labelColor=1262BF&logo=linkedin&logoColor=white&link=https://twitter.com/jjuliomarttins)](https://www.linkedin.com/in/jjuliomarttins/)

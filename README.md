@@ -51,4 +51,4 @@ The follows tools were used on project build:
 
 Make by Julio Martins 👋🏽 Contact me!
 
-[![Twitter Badge](https://img.shields.io/badge/-@jjuliomarttins-1ca0f1?style=for-the-badge&labelColor=1ca0f1&logo=twitter&logoColor=white&link=https://twitter.com/jjuliomarttins)](https://twitter.com/jjuliomarttins) [![Linkedin Badge](https://img.shields.io/badge/-@jjuliomarttins-1262BF?style=for-the-badge&labelColor=1262BF&logo=linkedin&logoColor=white&link=https://twitter.com/jjuliomarttins)](https://www.linkedin.com/in/jjuliomarttins/)
+[![Linkedin Badge](https://img.shields.io/badge/-@jjuliomarttins-1262BF?style=for-the-badge&labelColor=1262BF&logo=linkedin&logoColor=white&link=https://twitter.com/jjuliomarttins)](https://www.linkedin.com/in/jjuliomarttins/)

@@ -41,7 +41,7 @@ The follows tools were used on project build:
 - [React Markdown](https://github.com/remarkjs/react-markdown)
 - [store](https://github.com/marcuswestin/store.js)
 
-## Autor
+## Author
 
 ---
 
